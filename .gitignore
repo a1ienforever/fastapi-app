@@ -1,0 +1,83 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# Byte-compiled / optimized / DLL files
+*.so
+*.dll
+*.dylib
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+env/
+env.bak/
+.venv.bak/
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+.env.*
+
+# Pre-commit cache
+.pre-commit-config.yaml~
+.pre-commit/
+
+# Ruff cache
+ruff_cache/
+
+# Poetry
+poetry.lock
+
+# Migrations (если вручную создаёшь)
+migrations/
+*/migrations/
+
+# Test and coverage
+.coverage
+htmlcov/
+coverage.xml
+pytest_cache/
+.tox/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# PyInstaller
+*.spec
+
+# uv
+.uv/
+
+# pip-tools
+*.txt~  # временные файлы зависимостей
+
+# Logs
+*.log
+*.tmp
+*.bak
+
+# Local DB or media
+*.sqlite3
+media/

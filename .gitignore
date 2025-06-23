@@ -49,7 +49,7 @@ ruff_cache/
 poetry.lock
 
 # Migrations (если вручную создаёшь)
-migrations/
+app/migrations/
 */migrations/
 
 # Test and coverage

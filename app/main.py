@@ -1,21 +1,12 @@
 import uvicorn
 from fastapi import FastAPI
 
-from app.handlers import routers
+from app.handlers import main_router
 
 app = FastAPI()
 
-for router in routers:
-    app.include_router(router)
-countries = []
-flag = True
-
-
+app.include_router(main_router)
 
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
-
-
-if __name__ == "__main__":
-    uvicorn.run("app.main:app", host="localhost", port=8000, reload=True, env_file='../.env')

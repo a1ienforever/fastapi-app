@@ -48,10 +48,6 @@ ruff_cache/
 # Poetry
 poetry.lock
 
-# Migrations (если вручную создаёшь)
-app/migrations/
-*/migrations/
-
 # Test and coverage
 .coverage
 htmlcov/

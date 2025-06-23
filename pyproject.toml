@@ -28,4 +28,3 @@ fixable = ["ALL"]
 
 [tool.ruff.format]
 quote-style = "double"          # или 'single'
-

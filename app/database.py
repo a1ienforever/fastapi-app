@@ -23,11 +23,3 @@ async def get_session():
 
 SessionDep = Annotated[AsyncSession, Depends(get_session)]
 
-async def setup_database():
-    async with engine.begin() as conn:
-        await conn.run_sync(model.Base.metadata.drop_all)
-        await conn.run_sync(model.Base.metadata.create_all)
-
-
-if __name__ == '__main__':
-    asyncio.run(setup_database())

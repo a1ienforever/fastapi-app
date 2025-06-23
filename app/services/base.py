@@ -1,14 +1,17 @@
+from typing import List
+
 from sqlalchemy import select
 
 from app.database import SessionDep
+from app.schemas.pagination import PaginationParams
 
 
 class BaseService:
     model = None
 
     @classmethod
-    async def find_all(cls, session: SessionDep):
-        query = select(cls.model)
+    async def find_all(cls, session: SessionDep, pagination: PaginationParams) -> List[model]:
+        query = select(cls.model).limit(pagination.limit).offset(pagination.offset)
         result = await session.execute(query)
         return result.scalars().all()
 
@@ -26,7 +29,9 @@ class BaseService:
 
     @classmethod
     async def create(cls, session: SessionDep, data: dict):
-        query = cls.model(**data)
-        session.execute(query)
-        session.commit()
+        instance = cls.model(**data)
+        session.add(instance)
+        await session.commit()
+        await session.refresh(instance)
+        return instance
 
